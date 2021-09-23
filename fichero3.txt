@@ -1,0 +1,5 @@
+The following script shows the ways to add and search data in a 
+python set. A set of integer data is declared in the script. add() 
+method is used to insert new data in the set. Next, an integer value 
+will be taken as input to search the value in the set by using for 
+loop and if condition.
