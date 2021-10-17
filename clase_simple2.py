@@ -1,4 +1,5 @@
 class Estudiante:
+    
     def __init__(self, nombre, edad, genero, altura):
         self.nombre = nombre
         self.edad   = edad
@@ -7,5 +8,5 @@ class Estudiante:
         
 un_estudiante = Estudiante('Pepe',15,'masculino','1.80m')
 
-print (un_estudiante.altura)
+print(un_estudiante.altura)
 
