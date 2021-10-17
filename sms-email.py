@@ -3,8 +3,8 @@ from email.message import EmailMessage
 
 def email_alert(subject, body, to):
 
-    user     = "formulariodecontacto@123mail.es"
-    password = "paQaCj_K7"
+    user     = "MIUSER"
+    password = "MIPASS"
 
     msg = EmailMessage()
     msg.set_content(body)
