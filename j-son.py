@@ -7,7 +7,7 @@ file = open('datos/data.json',)
 # a dictionary
 data = json.load(file)
  
-print(data["orders"][1]["toppings"])
+print(data["orders"][0]["client"]["address"]["street"])
  
 # Closing file
 file.close()

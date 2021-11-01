@@ -7,10 +7,14 @@
 			"extra_cheese": false,
 			"delivery": true,
 			"client": {
-				"name": "Jane Doe",
-				"phone": null,
-				"email": "janedoe@email.com"
-			}
+                        "name": "Jane Doe",
+                        "phone": null,
+                        "address": {
+                                    "street": "Foo Jones",
+                                    "city": "556-342-452",
+                                    "number": null
+                                  }
+			          }
 		},
 		{
 			"size": "small",
