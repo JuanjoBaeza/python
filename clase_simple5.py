@@ -1,5 +1,6 @@
 
 class Persona:
+    
     "Informacion de la clase"
     edad=10
 
