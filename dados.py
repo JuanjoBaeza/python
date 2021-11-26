@@ -14,3 +14,4 @@ while nuevatirada == "Si" or nuevatirada == "S":
     print(random.randint(min_val, max_val))
     
     nuevatirada = input("Lanzar dados? ").capitalize()
+    
