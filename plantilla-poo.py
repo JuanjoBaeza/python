@@ -36,8 +36,15 @@ class BlogAutores:
         print("Metodo Acualiza_articulos\n")
         self.numero_articulos = numero_articulos
 
-autor = BlogAutores("Pedro", 10)
 
-autor.mostrar_articulos()
-autor.actualiza_articulos(30)
-autor.mostrar_articulos()
+if __name__ == '__main__':
+
+    """ Instanciamos el objeto autor """
+
+    autor = BlogAutores("Pedro", 10)
+
+    """ Llamamos a los metodos """
+
+    autor.mostrar_articulos()
+    autor.actualiza_articulos(30)
+    autor.mostrar_articulos()
