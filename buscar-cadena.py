@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*
-
 # Buscador de cadenas en ficheros de un directorio
 
 import os
