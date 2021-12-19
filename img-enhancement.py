@@ -1,5 +1,5 @@
 # pip install pillow
-from PIL import Image,ImageFilter
+from PIL import Image, ImageFilter
 from PIL import ImageEnhance
  
 im = Image.open('img.jpg')

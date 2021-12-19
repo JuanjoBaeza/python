@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 def saludar(*personas): 
     
     for name in personas:

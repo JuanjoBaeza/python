@@ -1,6 +1,6 @@
 # PDF to Images
 import fitz
-pdf = 'sample_pdf.pdf'
+pdf = 'sample.pdf'
 doc = fitz.open(pdf)
  
 for page in doc:
