@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 import getpass
 
 database = {"juanjo": "123", "juan": "1234"}
