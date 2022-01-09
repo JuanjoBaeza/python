@@ -21,7 +21,7 @@ class Human:
         return "{} is skating".format(self.name)
 
 if __name__ == '__main__':
-    per = Human()
+    persona = Human()
     
-    a = per.listen_to_music('MI_cancion')
+    a = persona.listen_to_music('MI_cancion')
     print (a)

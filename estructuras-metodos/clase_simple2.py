@@ -6,7 +6,11 @@ class Estudiante:
         self.genero = genero
         self.altura = altura
         
-un_estudiante = Estudiante('Pepe',15,'masculino','1.80m')
+nombre = "Pepe"
+edad = 25
+genero = "M"
+altura = 1.80
 
-print(un_estudiante.altura)
+un_estudiante = Estudiante(nombre, edad, genero, altura)
+print(un_estudiante.edad)
 
