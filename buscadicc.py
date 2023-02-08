@@ -1,17 +1,23 @@
-# f = open("datos/diccionario_ingles.txt", "r")
+words = []
+f = open("datos/diccionario_ingles.txt", "r")
+words = f.read().split()
 
-# seq = f.read()
+for word in words:
 
-seq = "teenager"
+  chars  = ["t","e","e","n","c","a","n","r"]
+  truths = []
 
-def valide(seq) :
+  # 1. Loop through the chars
+  for char in chars:
+      # 2. Check if a character is in the target string
+      truth = char in word
+      # 3. Add the truth to a truths list
+      truths.append(truth)
+            
+  # 4. Check if all boolean values are True
+  has_all = True
 
-    sub = ["t","e","e","n"]
-    
-    if all(s in sub for s in seq):
-      print("True")
-    else:
-      print("False")
-
-valide(seq)
-
+  for truth in truths:
+    has_all = has_all and truth
+              
+  print(has_all, word)
