@@ -1,3 +1,6 @@
+#
+# Install with pip install git+https://github.com/openai/whisper.git 
+#
 import whisper
 import os
 from whisper.utils import get_writer
@@ -60,7 +63,15 @@ def write_srt(transcript: Iterator[dict], file: TextIO):
         )    
 
 result = model.transcribe(fileloc, verbose=True, language=language)
-  
+
+# save TXT
+# with open(os.path.join(output_dir, os.path.splitext(filename)[0] + ".txt"), "w") as txt:
+#       print(result["text"], file=txt)
+
+# save VTT
+# with open(os.path.join(output_dir, os.path.splitext(filename)[0] + ".vtt"), "w") as vtt:
+#       write_vtt(result["segments"], file=vtt)
+
 # save SRT
 with open(os.path.join(output_dir, os.path.splitext(filename)[0] + f".{language}.srt"), "w") as srt:
         write_srt(result["segments"], file=srt)
