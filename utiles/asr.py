@@ -1,16 +1,36 @@
 import whisper
-from whisper.utils import get_writer
 import os
-
-#model = whisper.load_model("large-v3")
-model = whisper.load_model("base")
-
-output_dir = '/mnt/c/Temp'
-filename   = 'EP09'
-language   = 'es'
-fileloc    = 'https://www.cumlingus.com/wp-content/uploads/podcasts/R2_EPISODIO_09_MONOGRAFICO_CINE_RURAL_CONTEMPORANEO_ESPAÑOL.mp3'
-
+from whisper.utils import get_writer
 from typing import Iterator, TextIO
+import torch
+
+print('Torch cuda available:', torch.cuda.is_available() )
+
+# Model options:
+# Size      Params   vRAM   Relative Speed
+#
+# tiny      39M      1Gb    32x
+# base      74M      1Gb    16x
+# small     244M     2Gb     6x
+# medium    769M     5Gb     2x
+# large-v3  1550M    10Gb    1x
+
+#With GPU capable
+model  = whisper.load_model("medium", device="cuda:0")
+
+#Without GPU capable
+#model  = whisper.load_model("medium")
+
+filename   = 'EP12'
+language   = 'es'
+
+#Linux
+fileloc    = '/mnt/c/Users/Admin/Downloads/Cumlingus_podcast/Episodios_audio/REVISADOS/R2_EPISODIO_12_DIRECTOR_SAM_PECKINPAH.mp3'
+output_dir = '/mnt/c/Temp'
+
+#Win
+#fileloc    = r"C:\Admin\Downloads\Cumlingus_podcast\Episodios_audio\REVISADOS\R2_EPISODIO_10_LIBRO_LA_SOCIEDAD_DEL_RENDIMIENTO.mp3"
+#output_dir = r"C:\Temp"
 
 def srt_format_timestamp(seconds: float):
     assert seconds >= 0, "non-negative timestamp expected"
