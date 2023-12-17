@@ -21,19 +21,15 @@ print('Torch cuda available:', torch.cuda.is_available() )
 #With GPU capable
 model  = whisper.load_model("medium", device="cuda:0")
 
-#Without GPU capable
-#model  = whisper.load_model("medium")
+#Without CPU capable
+#model  = whisper.load_model("tiny")
 
 filename   = 'EP12'
 language   = 'es'
 
 #Linux
-fileloc    = '/mnt/c/Users/Admin/Downloads/Cumlingus_podcast/Episodios_audio/REVISADOS/R2_EPISODIO_12_DIRECTOR_SAM_PECKINPAH.mp3'
+fileloc    = '/mnt/c/Temp/R2_EPISODIO_43_CULTO_LOST_IN_TRANSLATION.mp3'
 output_dir = '/mnt/c/Temp'
-
-#Win
-#fileloc    = r"C:\Admin\Downloads\Cumlingus_podcast\Episodios_audio\REVISADOS\R2_EPISODIO_10_LIBRO_LA_SOCIEDAD_DEL_RENDIMIENTO.mp3"
-#output_dir = r"C:\Temp"
 
 def srt_format_timestamp(seconds: float):
     assert seconds >= 0, "non-negative timestamp expected"
@@ -60,9 +56,13 @@ def write_srt(transcript: Iterator[dict], file: TextIO):
             f"{segment['text'].replace('-->', '->').strip()}\n",
             file=file,
             flush=True,
-        )    
-
+        )
+        
+#Linux
 result = model.transcribe(fileloc, verbose=True, language=language)
+
+#Windows CPU
+#result = model.transcribe(fileloc, verbose=True, language=language, fp16=False)
 
 # save TXT
 # with open(os.path.join(output_dir, os.path.splitext(filename)[0] + ".txt"), "w") as txt:
