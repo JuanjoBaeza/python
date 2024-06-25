@@ -19,17 +19,21 @@ print('Torch cuda available:', torch.cuda.is_available() )
 # large-v3  1550M    10Gb    1x
 
 #With GPU capable
-model  = whisper.load_model("medium", device="cuda:0")
+model  = whisper.load_model("large-v3", device="cuda:0")
 
 #Without CPU capable
-#model  = whisper.load_model("tiny")
+#model  = whisper.load_model("medium")
 
-filename   = 'EP12'
+filename   = 'Peter_Beale'
 language   = 'es'
 
 #Linux
-fileloc    = '/mnt/c/Temp/R2_EPISODIO_43_CULTO_LOST_IN_TRANSLATION.mp3'
+fileloc    = '/mnt/c/Temp/audio.mp3'
 output_dir = '/mnt/c/Temp'
+
+#Win
+#fileloc    = 'C:\Temp\audio.mp3'
+#output_dir = 'C:\Temp'
 
 def srt_format_timestamp(seconds: float):
     assert seconds >= 0, "non-negative timestamp expected"
