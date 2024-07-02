@@ -73,9 +73,8 @@ while True:
 
         if matches[best_match_index]:
             name = known_names[best_match_index]
+            print("Found {0} faces!".format(len(faces)))
             show_alert(name)
-
-    print("Found {0} faces!".format(len(faces)))
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
