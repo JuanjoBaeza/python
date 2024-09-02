@@ -19,16 +19,16 @@ print('Torch cuda available:', torch.cuda.is_available() )
 # large-v3  1550M    10Gb    1x
 
 #With GPU capable
-model  = whisper.load_model("large-v3", device="cuda:0")
+model  = whisper.load_model("small", device="cuda:0")
 
 #Without CPU capable
 #model  = whisper.load_model("medium")
 
-filename   = 'Peter_Beale'
-language   = 'es'
+filename   = 'Pelicula'
+language   = 'de'
 
 #Linux
-fileloc    = '/mnt/c/Temp/audio.mp3'
+fileloc    = '/mnt/c/Temp/output.mp3'
 output_dir = '/mnt/c/Temp'
 
 #Win

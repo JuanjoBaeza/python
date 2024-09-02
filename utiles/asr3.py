@@ -1,7 +1,7 @@
 import whisper
 from whisper.utils import get_writer
 
-filename = "audio.mp3"
+filename = "C:\\Repo\\python\\utiles\\output.mp3"
 input_directory  = "/tmp"
 output_directory = "/tmp"
 input_file = f"{input_directory}/{filename}"
