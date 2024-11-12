@@ -1,5 +1,7 @@
 from openai import OpenAI
  
+# Arrancar previamente la aplicacion LM Studio y e iniciar el servidor local con 
+# el modelo Meta Llama 3 8B Instruct
 
 client = OpenAI(base_url="http://localhost:1234/v1", api_key="not-needed")
  
