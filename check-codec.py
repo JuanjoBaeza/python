@@ -21,7 +21,7 @@ def get_video_codec_and_resolution(file_path):
 
 # Función para recorrer el directorio, analizar los archivos de video y guardar los archivos HEVC en un fichero de texto
 def check_video_codecs(directory, output_file):
-    with open(output_file, 'w') as f_out:
+    with open(output_file, "w+") as f_out:
         for root, dirs, files in os.walk(directory):
             for file in files:
                 if file.lower().endswith(('.mp4', '.mkv', '.avi', '.mov', '.flv', '.wmv')):
@@ -33,4 +33,7 @@ def check_video_codecs(directory, output_file):
 #                       print(f"Archivo HEVC encontrado: {file_path}, Resolución: {resolution}")
 
 # Cambia 'ruta_del_directorio' a la ruta de tu directorio de video y 'salida.txt' al nombre del archivo de salida
-check_video_codecs('/mnt/z/E01', '/tmp/salidaE1.txt')
+# Linux
+check_video_codecs('/mnt/z/Vistas', '/tmp/Vistas.txt')
+# Win
+# check_video_codecs('Z:\\Vistas', 'C:\\Temp\\Vistas.txt')
