@@ -2,7 +2,7 @@ import requests
 import json
 
 # Reemplaza esto con tu propia API Key
-API_KEY = "AIzaSyDsHjhLWR-SH7oRsLuaAQmiZhatZ4RtSog"
+API_KEY = "xxxxxxxxxxxxxxxxxxxxxxx"
 MODEL = "models/gemini-1.5-flash"
 
 url = f"https://generativelanguage.googleapis.com/v1/models?key={API_KEY}"
