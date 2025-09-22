@@ -103,7 +103,7 @@ if __name__ == "__main__":
     
     # Usar cualquiera de las dos opciones:
     # API_KEY = os.getenv("ANTHROPIC_API_KEY")
-    # API_KEY = "XXXXXXXXXXXXXXXXXXX"
+    API_KEY = "XXXXXXXXXXXXXXXXXXX"
     
     if not API_KEY:
         raise RuntimeError(
