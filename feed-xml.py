@@ -56,5 +56,5 @@ def leer_feed_y_mostrar_mp3(url):
 # Ejemplo de uso:
 if __name__ == "__main__":
     # Puedes cambiar esta URL por la de cualquier podcast o feed RSS
-    url_feed = "https://media.rss.com/excelsior-by-rentero/feed.xml"  # Ejemplo: podcast de Lex Fridman
+    url_feed = "https://lexfridman.com/feed/podcast/"  # Ejemplo: podcast de Lex Fridman
     leer_feed_y_mostrar_mp3(url_feed)
