@@ -27,7 +27,7 @@ def obtener_resolucion(ruta_video):
 def buscar_archivos_video(directorio, archivo_salida):
     extensiones_video = {".mp4", ".mkv", ".avi", ".mov", ".wmv", ".flv"}  # Agrega más si es necesario
     archivos_encontrados = []
-    limite_tamano = 1.5 * 1024 * 1024 * 1024  # 1.5GB en bytes
+    limite_tamano = 4 * 1024 * 1024 * 1024  # 4GB en bytes como mucho
     
     for raiz, _, archivos in os.walk(directorio):
         for archivo in archivos:
@@ -35,7 +35,7 @@ def buscar_archivos_video(directorio, archivo_salida):
             if extension in extensiones_video:
                 ruta_completa = os.path.join(raiz, archivo)
                 tamano = os.path.getsize(ruta_completa)
-                if tamano < limite_tamano:  # Filtrar archivos menores a 2GB
+                if tamano < limite_tamano:  # Filtrar archivos menores a 4GB
                     resolucion = obtener_resolucion(ruta_completa)
                     if resolucion:
                         ancho, alto = resolucion
@@ -43,7 +43,7 @@ def buscar_archivos_video(directorio, archivo_salida):
                         if ancho < 1280:
                             nombre_sin_extension = os.path.splitext(archivo)[0]
                             archivos_encontrados.append((raiz, nombre_sin_extension, f"{ancho}x{alto}", tamano))
-     
+
     archivos_encontrados.sort(key=lambda x: x[3])
     
     with open(archivo_salida, 'a', encoding='utf-8') as f:
@@ -53,9 +53,10 @@ def buscar_archivos_video(directorio, archivo_salida):
     print(f"Información guardada en {archivo_salida} directorio {directorio}")
 
 
-alfa = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','0-9']
+#alfa = ['0-9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z','007']
+alfa = ['Años', 'Directores & Actores', 'Manga y animacion', 'Vistas']
 
 for i in alfa:
     dir = "/mnt/z/" + i
-    archivo_salida = "/home/juanjo/informacion_videos.txt"
+    archivo_salida = "/mnt/c/Temp/informacion_videos_usb.txt"
     buscar_archivos_video(dir, archivo_salida)

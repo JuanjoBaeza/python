@@ -1,22 +1,35 @@
-Height=float(input("Enter your height in centimeters: "))
-Weight=float(input("Enter your Weight in Kg: "))
+def get_bmi_category(bmi: float) -> str:
+    """Returns the BMI category label based on the BMI value."""
+    if bmi <= 16:
+        return "Severely Underweight"
+    elif bmi <= 18.5:
+        return "Underweight"
+    elif bmi <= 25:
+        return "Healthy"
+    elif bmi <= 30:
+        return "Overweight"
+    else:
+        return "Severely Overweight"
 
-Height = Height/100
 
-BMI=Weight/(Height*Height)
+def main():
+    try:
+        height_cm = float(input("Enter your height in centimeters: "))
+        weight_kg = float(input("Enter your weight in kg: "))
 
-print("your Body Mass Index is: ",BMI)
+        if height_cm <= 0 or weight_kg <= 0:
+            print("Error: Height and weight must be positive values.")
+            return
 
-if(BMI>0):
+        height_m = height_cm / 100
+        bmi = weight_kg / (height_m ** 2)
 
-	if(BMI<=16):
-		print("you are severely underweight")
-	elif(BMI<=18.5):
-		print("you are underweight")
-	elif(BMI<=25):
-		print("you are Healthy")
-	elif(BMI<=30):
-		print("you are overweight")
-	else: print("you are severely overweight")
+        print(f"\nYour Body Mass Index (BMI) is: {bmi:.2f}")
+        print(f"Category: {get_bmi_category(bmi)}")
 
-else:("enter valid details")
+    except ValueError:
+        print("Error: Please enter valid numeric values.")
+
+
+if __name__ == "__main__":
+    main()
