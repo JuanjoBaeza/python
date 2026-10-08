@@ -2,7 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, MessageHandler, filters, ContextTypes
 
 # ⚙️ Configura tus datos
-BOT_TOKEN = "8583365467:AAEJu0wKq3RwNqWyJFBXyK4W7EbhEBA3pfM"
+BOT_TOKEN = "xxxxxxxxx"
 ADMIN_CHAT_ID = 2064798090  # ← tu ID personal o el de un grupo
 
 # Productos de ejemplo
