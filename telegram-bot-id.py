@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-BOT_TOKEN = "8583365467:AAEJu0wKq3RwNqWyJFBXyK4W7EbhEBA3pfM"
+BOT_TOKEN = "xxxxxxxx"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # `effective_user` funciona siempre, aunque no haya `message`
