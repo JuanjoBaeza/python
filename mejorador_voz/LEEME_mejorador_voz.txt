@@ -1,0 +1,45 @@
+MEJORADOR INTELIGENTE DE VOZ - PySide6
+======================================
+
+1) Crear un entorno virtual (recomendado):
+   py -m venv .venv
+   .venv\Scripts\activate
+
+2) Instalar dependencias de la aplicación:
+   python -m pip install --upgrade pip
+   pip install -r requirements_mejorador_voz.txt
+
+3) Ejecutar:
+   python mejorador_voz_pyside6.py
+
+MOTOR CLÁSICO
+-------------
+Usa análisis espectral, ecualización adaptativa, reducción de ruido opcional
+(noisereduce) y compresión moderada.
+
+MOTOR IA LOCAL (OPCIONAL)
+-------------------------
+Instalar Resemble Enhance en el mismo entorno virtual:
+   pip install resemble-enhance --upgrade
+
+Comprobar que el comando está disponible:
+   resemble-enhance --help
+
+Después, abrir la aplicación y seleccionar:
+   Motor de mejora -> Resemble Enhance (IA local)
+
+El primer uso puede necesitar descargar pesos del modelo y puede tardar.
+La inferencia se ejecuta localmente; el audio no se envía a un servicio web.
+El rendimiento depende de CPU, GPU, memoria y versión de PyTorch.
+
+IMPORTANTE
+----------
+- Resemble Enhance realiza mejora y reducción de ruido; no garantiza eliminar
+  toda la reverberación de una habitación ni reparar clipping severo.
+- El indicador de voz metálica del análisis es orientativo, no una medición
+  perceptual infalible.
+- Conserva siempre el original. Compara el resultado con auriculares.
+- Formatos admitidos en la interfaz: WAV, FLAC, OGG, AIFF, AIF y MP3.
+- MP3 se decodifica con PyAV (incluido en requirements); el resultado se
+  exporta como WAV PCM de 24 bits.
+- La salida se guarda como WAV PCM de 24 bits.

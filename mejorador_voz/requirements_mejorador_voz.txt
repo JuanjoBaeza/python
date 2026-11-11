@@ -1,0 +1,19 @@
+# requirements para mejorador_voz_pyside6_v4.py
+# Entorno: Python 3.10, venv ~/venvs/resemble
+#
+# Dependencias directas de la aplicación:
+PySide6
+numpy
+scipy
+soundfile
+noisereduce
+av
+
+# Motor de mejora de voz:
+resemble-enhance==0.0.1
+
+# IMPORTANTE:
+# torch y torchaudio forman parte del entorno de Resemble Enhance.
+# En este equipo se usan versiones compatibles con CUDA 12.1:
+#   torch==2.1.1+cu121
+#   torchaudio==2.1.1+cu121

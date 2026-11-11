@@ -32,8 +32,10 @@ def check_video_codecs(directory, output_file):
                         f_out.write(f"{file_path} - Resolución: {resolution}\n")
 #                       print(f"Archivo HEVC encontrado: {file_path}, Resolución: {resolution}")
 
-# Cambia 'ruta_del_directorio' a la ruta de tu directorio de video y 'salida.txt' al nombre del archivo de salida
-# Linux
-check_video_codecs('/mnt/z/Vistas', '/tmp/Vistas.txt')
-# Win
+#Cambia 'ruta_del_directorio' a la ruta de tu directorio de video y 'salida.txt' al nombre del archivo de salida
+
+#Linux
+check_video_codecs('/mnt/z/Vistas', '/mnt/z/Temp/Vistas.txt')
+
+#Win
 # check_video_codecs('Z:\\Vistas', 'C:\\Temp\\Vistas.txt')
